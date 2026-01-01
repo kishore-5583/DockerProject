@@ -1,1 +1,26 @@
-
+version: '3.8'
+services:
+  movies:
+    image: kishore1667/paymovies:v1
+    ports:
+      - "81:80"
+    deploy:
+      replicas: 3
+  train:
+    image: kishore1667/paytrain:v1
+    ports:
+      - "82:80"
+    deploy:
+      replicas: 3
+  dth:
+    image: kishore1667/dth:v1
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3
+  recharge:
+    image: kishore1667/recharge:v1
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3 
